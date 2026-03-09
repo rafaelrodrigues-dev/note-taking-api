@@ -95,6 +95,27 @@ All note endpoints require authentication via `Authorization: Token {token}` hea
 
 - **DELETE /api/notes/{id}/**: Delete a note
 
+### Tasks
+
+Tasks are similar to notes, but they can be marked as completed or not, and also require authentication via `Authorization: Token {token}`.
+
+- **GET /api/tasks**: List user's tasks (paginated, 10 per page)
+  - Query params: `?page=1`
+  - Returns: `{"count":int, "next": url, "previous":url, "results": [tasks]}`
+
+- **POST /api/tasks/**: Create a new task
+  - Body: `{"title": "string", "content": "string"}`
+  - Returns: Created task data
+
+- **GET /api/tasks/{id}/**: Get a specific task
+  - Returns: Task data
+
+- **PATCH /api/tasks/{id}/**: Update a task (partial)
+  - Body: `{"title": "string"}` or `{"content": "string"}`
+  - Returns: Updated task data
+
+- **DELETE /api/tasks/{id}/**: Delete a task
+
 ### Admin
 
 - **/admin/**: Django admin interface (requires superuser credentials)
