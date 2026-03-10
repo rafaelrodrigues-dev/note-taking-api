@@ -62,16 +62,16 @@ The API will be available at `http://localhost:8000`.
   - Body: `{"username": "string", "email": "string", "password": "string"}`
   - Returns: User data
 
-- **GET /api/accounts/**: Get user details (authenticated)
+- **GET /api/accounts/me/**: Get user details (authenticated)
   - Headers: `Authorization: Token {token}`
   - Returns: User data
 
-- **PATCH /api/accounts/**: Update user details (authenticated)
+- **PATCH /api/accounts/me/**: Update user details (authenticated)
   - Headers: `Authorization: Token {token}`
   - Body: Partial user data
   - Returns: Updated user data
 
-- **DELETE /api/accounts/**: Delete user (authenticated)
+- **DELETE /api/accounts/me/**: Delete user (authenticated)
   - Headers: `Authorization: Token {token}`
 
 ### Notes
